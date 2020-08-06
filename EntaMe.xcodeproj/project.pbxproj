@@ -31,7 +31,7 @@
 		085FE906238BD04900AF05E7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085FE905238BD04800AF05E7 /* Network.swift */; };
 		085FE909238BD1C400AF05E7 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085FE8BF238BAF4B00AF05E7 /* Domain.framework */; };
 		085FE90D238CB79200AF05E7 /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085FE90C238CB79200AF05E7 /* TMDB.swift */; };
-		085FE90F238CBA0900AF05E7 /* MoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085FE90E238CBA0900AF05E7 /* MoviesAPI.swift */; };
+		085FE90F238CBA0900AF05E7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085FE90E238CBA0900AF05E7 /* API.swift */; };
 		08D973F124D2872800F288A1 /* MovieResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D973F024D2872800F288A1 /* MovieResource.swift */; };
 		54EFD7379EF828E939FE8A2F /* Pods_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA59BBB783D698D11A207E7 /* Pods_DomainTests.framework */; };
 		955076D66F541B4882BD114D /* Pods_EntaMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD63AE7FBF707F7C363A4FD /* Pods_EntaMe.framework */; };
@@ -136,7 +136,7 @@
 		085FE8F9238BC9AA00AF05E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		085FE905238BD04800AF05E7 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		085FE90C238CB79200AF05E7 /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
-		085FE90E238CBA0900AF05E7 /* MoviesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAPI.swift; sourceTree = "<group>"; };
+		085FE90E238CBA0900AF05E7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		08D973F024D2872800F288A1 /* MovieResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResource.swift; sourceTree = "<group>"; };
 		2E0BE8DDCF3EEFB88D318D94 /* Pods_Platform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Platform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3646DA8E08B1C12C4DA2C598 /* Pods_PlatformTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlatformTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,7 +306,7 @@
 			children = (
 				085FE8EA238BC9AA00AF05E7 /* Platform.h */,
 				085FE90C238CB79200AF05E7 /* TMDB.swift */,
-				085FE90E238CBA0900AF05E7 /* MoviesAPI.swift */,
+				085FE90E238CBA0900AF05E7 /* API.swift */,
 				08D973F024D2872800F288A1 /* MovieResource.swift */,
 				085AE1F32398FF860075B3BF /* Endpoint.swift */,
 				085AE1F52398FFFD0075B3BF /* Resource.swift */,
@@ -854,7 +854,7 @@
 				08D973F124D2872800F288A1 /* MovieResource.swift in Sources */,
 				085AE1F42398FF860075B3BF /* Endpoint.swift in Sources */,
 				085AE1F62398FFFD0075B3BF /* Resource.swift in Sources */,
-				085FE90F238CBA0900AF05E7 /* MoviesAPI.swift in Sources */,
+				085FE90F238CBA0900AF05E7 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

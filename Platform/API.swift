@@ -1,5 +1,5 @@
 //
-//  MoviesAPI.swift
+//  API.swift
 //  Platform
 //
 //  Created by Sumra Aarif on 2019/11/26.
