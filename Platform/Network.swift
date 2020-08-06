@@ -17,7 +17,7 @@ enum NetworkError: Error { // Use URLError ?
 }
 
 public protocol Networking: class {
-    func submit(_ request: URLRequest, completion: @escaping (Data) -> Void)
+    func send(_ request: URLRequest, completion: @escaping (Data) -> Void)
 }
 
 public class Network: Networking {
@@ -28,7 +28,7 @@ public class Network: Networking {
         self.session = session ?? URLSession.shared
     }
     
-    public func submit(_ request: URLRequest, completion: @escaping (Data) -> Void) {
+    public func send(_ request: URLRequest, completion: @escaping (Data) -> Void) {
         let task = session.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 self.handleNetworkError(.underlyingError(error!))

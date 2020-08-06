@@ -12,26 +12,29 @@ import Platform
 
 class ViewController: UIViewController {
     
-    var api: API<MovieResource>!
+    var api: API<Resources.TV>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let network = Network()
-        let api = API<MovieResource>(network: network)
+        let api = API<Resources.TV>(network: network)
         self.api = api
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         do {
-            try api.search(with: "super") { movies in
-                print(movies)
+            try api.search(with: "super") { tvs in
+                print(tvs)
             }
+            try api.fetchDetail(for: 106998, resultHandler: { tv in
+                print(tv)
+            })
+            
         } catch let err {
             print(err.localizedDescription)
         }
-        
     }
 }
 

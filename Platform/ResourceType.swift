@@ -1,5 +1,5 @@
 //
-//  Resource.swift
+//  ResourceType.swift
 //  Platform
 //
 //  Created by Sumra Aarif on 2019/12/05.
@@ -24,8 +24,18 @@ public protocol ResourceType {
     static var name: String { get }
 }
 
+public extension ResourceType where Self: Readable {
+
+    static func detailEndpoint(with id: Int) -> Endpoint {
+        return Endpoint(
+            path: "/3/\(Self.name)/\(id)",
+            queryItems: []
+        )
+    }
+}
+
 public extension ResourceType where Self: Searchable {
-    
+
     static func searchEndpoint(with query: String) -> Endpoint {
 //        precondition(Self.self is Readable, "The resource must be readable")
         return Endpoint(
