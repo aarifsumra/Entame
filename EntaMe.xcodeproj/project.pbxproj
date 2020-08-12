@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		070040055248FCC796E7C6C9 /* Pods_PlatformTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3646DA8E08B1C12C4DA2C598 /* Pods_PlatformTests.framework */; };
+		082338C824DCE02C00CCECCC /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082338C724DCE02C00CCECCC /* Season.swift */; };
 		085AE1F42398FF860075B3BF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085AE1F32398FF860075B3BF /* Endpoint.swift */; };
 		085AE1F62398FFFD0075B3BF /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085AE1F52398FFFD0075B3BF /* ResourceType.swift */; };
 		085FE899238B98B300AF05E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085FE898238B98B300AF05E7 /* AppDelegate.swift */; };
@@ -110,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		082338C724DCE02C00CCECCC /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		085AE1F32398FF860075B3BF /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		085AE1F52398FFFD0075B3BF /* ResourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceType.swift; sourceTree = "<group>"; };
 		085FE895238B98B300AF05E7 /* EntaMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EntaMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +296,7 @@
 			children = (
 				085FE8DD238BB1AC00AF05E7 /* Movie.swift */,
 				0897E1DB24DBF65C00595A52 /* TV.swift */,
+				082338C724DCE02C00CCECCC /* Season.swift */,
 				0897E1DD24DBFD1B00595A52 /* Person.swift */,
 			);
 			path = Entities;
@@ -840,6 +843,7 @@
 			files = (
 				085FE8E1238BB4ED00AF05E7 /* MoviesUseCase.swift in Sources */,
 				085FE8DE238BB1AC00AF05E7 /* Movie.swift in Sources */,
+				082338C824DCE02C00CCECCC /* Season.swift in Sources */,
 				0897E1DE24DBFD1B00595A52 /* Person.swift in Sources */,
 				0897E1DC24DBF65C00595A52 /* TV.swift in Sources */,
 			);

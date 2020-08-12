@@ -12,24 +12,24 @@ import Platform
 
 class ViewController: UIViewController {
     
-    var api: API<Resources.TV>!
+    var api: API<Resources.TV.Season>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let network = Network()
-        let api = API<Resources.TV>(network: network)
+        let api = API<Resources.TV.Season>(network: network)
         self.api = api
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         do {
-            try api.search(with: "super") { tvs in
-                print(tvs)
-            }
-            try api.fetchDetail(for: 106998, resultHandler: { tv in
-                print(tv)
+//            try api.search(with: "super") { tvs in
+//                print(tvs)
+//            }
+            try api.fetchDetail(id: 10444, forParent: 106989, resultHandler: { result in
+                print(result)
             })
             
         } catch let err {

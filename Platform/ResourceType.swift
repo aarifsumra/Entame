@@ -18,14 +18,17 @@ public protocol Ordering {
     associatedtype Option: RawRepresentable
 }
 
-public protocol ResourceType {
+public protocol ResourceType: Readable {
     associatedtype Model: Codable
 //    associatedtype Option
     static var name: String { get }
 }
 
-public extension ResourceType where Self: Readable {
+public protocol NestedResourceType: ResourceType {
+    associatedtype Parent: ResourceType
+}
 
+public extension ResourceType {
     static func detailEndpoint(with id: Int) -> Endpoint {
         return Endpoint(
             path: "/3/\(Self.name)/\(id)",
@@ -34,10 +37,23 @@ public extension ResourceType where Self: Readable {
     }
 }
 
-public extension ResourceType where Self: Searchable {
+public extension NestedResourceType {
+    static var parent: Parent.Type {
+        return Parent.self
+    }
+}
 
+public extension NestedResourceType {
+    static func detailEndpoint(with id: Int, parentEndpoint: Endpoint) -> Endpoint {
+        return Endpoint(
+            path: parentEndpoint.path + "/\(Self.name)/\(id)",
+            queryItems: [] + parentEndpoint.queryItems
+        )
+    }
+}
+
+public extension ResourceType where Self: Searchable {
     static func searchEndpoint(with query: String) -> Endpoint {
-//        precondition(Self.self is Readable, "The resource must be readable")
         return Endpoint(
             path: "/3/search/\(Self.name)",
             queryItems: [
@@ -48,9 +64,7 @@ public extension ResourceType where Self: Searchable {
 }
 
 extension ResourceType where Self: Ordering {
-
     func order(by option: Option) -> Endpoint {
-        precondition(Self.self is Readable, "The resource must be readable")
         return Endpoint(
             path: "\(Self.name)/\(option)/",
             queryItems: [

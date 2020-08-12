@@ -21,11 +21,36 @@ public class API<T: ResourceType> {
     }
 }
 
-public extension API where T: ResourceType & Readable {
+public extension API where T: ResourceType {
+    
     func fetchDetail(for id: Int, resultHandler:@escaping (T.Model) -> Void) throws {
         guard let detailUrl = T.detailEndpoint(with: id).url else {
             throw APIError.badEndpoint
         }
+        let request = URLRequest(url: detailUrl)
+        network.send(request) { data in
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let item = try decoder.decode(T.Model.self, from: data)
+                resultHandler(item)
+            } catch let err {
+                print(err)
+            }
+        }
+    }
+}
+
+public extension API where T: NestedResourceType {
+    func fetchDetail(id: Int, forParent parentId: Int, resultHandler:@escaping (T.Model) -> Void) throws {
+        let parentEndpoint = T.parent.detailEndpoint(with: parentId)
+        guard let detailUrl = T.detailEndpoint(
+            with: id,
+            parentEndpoint: parentEndpoint).url
+        else {
+            throw APIError.badEndpoint
+        }
+        
         let request = URLRequest(url: detailUrl)
         network.send(request) { data in
             do {
